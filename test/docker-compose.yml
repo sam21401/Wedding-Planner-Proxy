@@ -1,0 +1,11 @@
+services:
+  whoami:
+    image: traefik/whoami
+    labels:
+      - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
+    networks:
+      - traefik-network
+
+networks:
+  traefik-network:
+    external: true
